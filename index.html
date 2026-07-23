@@ -3,32 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedro Henrique | Portfólio</title>
+    <title>Pedro Borges | Portfólio</title>
+    <!-- Fonte Google Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0f172a;
-            color: #f8fafc;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --accent: #58a6ff;
+            --accent-hover: #1f6feb;
+        }
+
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
         .container {
-            text-align: center;
-            padding: 2rem;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            background-color: #1e293b;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        h1 { color: #38bdf8; }
+
+        /* Hero Section */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .avatar {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+
+        .profile-info p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-top: 0.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Seção de Projetos */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .tech-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+        }
+
+        .card-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-hover);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--border-color);
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Pedro Henrique</h1>
-        <p>Desenvolvedor em formação | Portfólio em construção 🚀</p>
+        <!-- Cabeçalho / Perfil -->
+        <header class="profile-header">
+            <!-- Pega automaticamente sua foto do GitHub -->
+            <img src="https://github.com/pedroferborges.png" alt="Pedro Borges" class="avatar">
+            
+            <div class="profile-info">
+                <h1>Pedro Borges</h1>
+                <p>Desenvolvedor Software / Web 🚀</p>
+                
+                <div class="social-links">
+                    <a href="https://github.com/pedroferborges" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/pedroferborges" target="_blank">LinkedIn</a>
+                    <a href="mailto:henrijborges@gmail.com">E-mail</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Meus Projetos -->
+        <main>
+            <h2 class="section-title">💻 Projetos em Destaque</h2>
+            
+            <div class="projects-grid">
+
+                <!-- Card Projeto 1 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">Nome do Projeto 1</h3>
+                        <p class="project-desc">Uma breve descrição sobre o que este sistema ou aplicativo faz e qual problema ele resolve.</p>
+                        <div class="tech-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/pedroferborges/NOME-DO-REPOSITORIO" target="_blank" class="btn btn-secondary">Repositório</a>
+                        <a href="#" target="_blank" class="btn btn-primary">Ver Demo</a>
+                    </div>
+                </div>
+
+                <!-- Card Projeto 2 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">Nome do Projeto 2</h3>
+                        <p class="project-desc">Descrição curta e direta sobre as funcionalidades principais deste outro projeto.</p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                        </div>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/pedroferborges/NOME-DO-REPOSITORIO" target="_blank" class="btn btn-secondary">Repositório</a>
+                    </div>
+                </div>
+
+                <!-- Card Projeto 3 -->
+                <div class="project-card">
+                    <div>
+                        <h3 class="project-title">Nome do Projeto 3</h3>
+                        <p class="project-desc">Mais um projeto relevante do seu portfólio.</p>
+                        <div class="tech-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/pedroferborges/NOME-DO-REPOSITORIO" target="_blank" class="btn btn-secondary">Repositório</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
     </div>
+
 </body>
 </html>
