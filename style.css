@@ -88,6 +88,28 @@ a {
   display: block;
 }
 
+/* ADICIONE ESTE CSS AQUI ↓ */
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.logo-area:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.6));
+}
+
+.logo-svg {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+}
+/* FIM DO NOVO CSS ↑ */
+
 .menu {
   position: absolute;
   left: 50%;
